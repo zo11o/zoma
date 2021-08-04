@@ -1,0 +1,40 @@
+{
+  "name": "zoma",
+  "version": "0.0.1",
+  "description": "css lib",
+  "main": "zoma.sass",
+  "unpkg": "css/zoma.css",
+  "style": "zoma/css/zoma.min.css",
+  "scripts": {
+    "build": "npm run build-sass && npm run build-autoprefix && npm run build-cleancss",
+    "build-autoprefix": "postcss --use autoprefixer --map false --output css/zoma.css css/zoma.css",
+    "build-cleancss": "cleancss -o css/zoma.min.css css/zoma.css",
+    "build-sass": "node-sass --output-style expanded --source-map true zoma.sass css/zoma.css",
+    "clean": "rimraf css",
+    "deploy": "npm run clean && npm run build",
+    "start": "npm run build-sass --watch"
+  },
+  "author": "",
+  "keywords": [
+    "css",
+    "sass",
+    "flexbox",
+    "responsive",
+    "framework"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^10.3.1",
+    "clean-css-cli": "^5.3.2",
+    "node-sass": "^6.0.1",
+    "postcss-cli": "^8.3.1",
+    "rimraf": "^3.0.2"
+  },
+  "files": [
+    "css",
+    "sass",
+    "bulma.sass",
+    "LICENSE",
+    "README.md"
+  ]
+}
